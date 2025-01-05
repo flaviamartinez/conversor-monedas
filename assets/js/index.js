@@ -1,7 +1,6 @@
 const apiURL = "https://mindicador.cl/api/";
 const currenciesArray = []
 
-// TODO: asegurar de agarrar excepciones
 async function getCurrencies() {
 	try {
 		const res = await fetch(apiURL);
@@ -110,11 +109,18 @@ const btn = document.querySelector('button');
 const result = document.getElementById('result');
 const chart = document.getElementById('chart-container');
 
-// TODO: revisar formato del input, que sea un int
 btn.addEventListener('click', async () => {
 	amount = input.value;
 	currency = selectCurrency.value;
-	currencyValue = currenciesArray.find(c => c.codigo === currency).valor;
+	selectedCurrency = currenciesArray.find(c => c.codigo === currency);
+
+	if (!selectedCurrency) {
+		alert("Debes seleccionar una moneda");
+		return;
+	  };
+	
+	currencyValue = selectedCurrency.valor;
+
 	result.innerHTML = `Resultado: ${(amount / currencyValue).toFixed(2)}`;
 
 	const serie = await storeHistory(currency);
