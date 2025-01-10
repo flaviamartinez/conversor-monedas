@@ -1,22 +1,44 @@
-body{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Lato", serif;
 }
 
-.container{
-	display: flex;
-	flex-direction: column;
-	height: 300px;
-	width: 300px;
-	align-items: center;
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 300px;
+  align-items: center;
 }
 
 input {
-	width: 50%;
+  width: 60%;
+  text-align: center;
+  border: solid grey 1px;
+  border-radius: 5px;
 }
 
 select {
-	width: 50%;
+  width: 60%;
+  text-align: center;
+  margin-bottom: 10px;
+  border: solid grey 1px;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #2e5a88;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  width: 100px;
+  height: 30px;
+}
+
+h3 {
+  margin: 10px;
 }
